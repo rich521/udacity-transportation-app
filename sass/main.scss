@@ -1,0 +1,214 @@
+$pcolor: #449d44;
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid {
+    max-width: 600px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.btn-group {
+    margin-bottom: 15px;
+}
+
+.ht {
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.btn-check {
+    margin-top: 10px;
+}
+
+.btn-link {
+    color: $pcolor;
+}
+
+.glyphicon-calendar {
+    color: $pcolor;
+}
+
+.at-label {
+    display: inline-block;
+    float: left;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.help-tool-1,
+.help-tool-2,
+.help-tool-3,
+.help-tool-4,
+.help-tool-5 {
+    display: none;
+    color: red;
+}
+
+.noTrains {
+    display: none;
+}
+
+.noTrainText {
+    margin-top: 15px;
+    border-top: 1px grey solid;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.tableTimes {
+    margin-top: 15px;
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    th,
+    td {
+        text-align: center;
+        padding: 5px 10px;
+    }
+    th {
+        color: $pcolor;
+        border-bottom: 1px lightgrey solid;
+    }
+    td {
+        font-size: 12px;
+        border-bottom: 1px lightgrey solid;
+    }
+
+    .tr-2 td {
+        width: 100%;
+    }
+}
+
+
+/* Typehead css */
+
+.typeahead,
+.tt-query,
+.tt-hint {
+    width: 396px;
+    height: 30px;
+    padding: 8px 12px;
+    font-size: 24px;
+    line-height: 30px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.typeahead {
+    background-color: #fff;
+    &:focus {
+        border: 2px solid #0097cf;
+    }
+}
+
+.tt-query {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+    color: #999;
+}
+
+.tt-menu {
+    width: 422px;
+    margin: 12px 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 18px;
+    line-height: 24px;
+    &:hover {
+        cursor: pointer;
+        color: #fff;
+        background-color: #0097cf;
+    }
+    &.tt-cursor {
+        color: #fff;
+        background-color: #0097cf;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+@media (max-width:480px) {
+    .dropdown-menu {
+        width: 90%;
+    }
+    .dropdown-menu > li > a {
+        white-space: normal;
+    }
+    .tableTimes {
+        display: block;
+        margin-top: 10px;
+        border-top: 1px lightgrey solid;
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        td {
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            text-align: right;
+        }
+        td:before {
+            text-align: left;
+            white-space: nowrap;
+            display: block;
+            color: $pcolor;
+            font-size: 14px;
+        }
+        td:nth-of-type(1):before {
+            content: "Departure";
+        }
+        td:nth-of-type(2):before {
+            content: "From";
+        }
+        td:nth-of-type(3):before {
+            content: "To";
+        }
+        td:nth-of-type(4):before {
+            content: "Arrival";
+        }
+        td:nth-of-type(5):before {
+            content: "Duration";
+        }
+        td:nth-of-type(6):before {
+            content: "Stops";
+        }
+        td:nth-of-type(7):before {
+            content: "Connected stations";
+        }
+    }
+}

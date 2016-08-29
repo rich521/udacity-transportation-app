@@ -1,0 +1,32 @@
+{
+  "name": "transportation-app",
+  "version": "1.0.0",
+  "description": "schedule for train times",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "browserify": "^13.1.0",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.42",
+    "es6-promise": "^3.2.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-sass": "^2.3.0",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-google": "^0.6.0",
+    "gulp-autoprefixer": "^3.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transportation",
+    "transit",
+    "schedule",
+    "times"
+  ],
+  "author": "Richard Strutt",
+  "license": "ISC"
+}
