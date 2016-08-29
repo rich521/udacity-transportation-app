@@ -10,5 +10,5 @@
 
 ##Note
 
-- Project does not work with Safari (Promise & Fetch still not compatiable)
+- Project is not compatible with Safari at the moment (Fecth & Promise api limitations)
 - Use google chrome or mozilla to run app
