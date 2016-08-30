@@ -5,7 +5,7 @@ var angular,
     $;
 
 angular.module("trainApp", ["ui.bootstrap"])
-    .controller("MainController", function ($scope) {
+    .controller("MainController", ($scope) => {
         var $s = $scope,
             sto,
             stt,
@@ -21,27 +21,26 @@ angular.module("trainApp", ["ui.bootstrap"])
                 dbVersion: 1,
                 storeName: "trainTimes",
                 keyPath: "id",
-                onStoreReady: function () {
-                    var onsuccess = function (data) {
+                onStoreReady: () => {
+                    var onsuccess = (data) => {
                         // If stored data exists
                         if (data) {
                             // Stations
                             sto = data.sto;
                             // Specific timetable
                             stt = data.stt;
-                            resolve();
                         }
+                        resolve();
                     };
-                    var onerror = function (error) {
+                    var onerror = (error) => {
                         $(".help-tool-5").show();
                         console.log(error);
                         resolve();
                     };
                     tables.get(1, onsuccess, onerror);
-
                 }
             });
-        }).then(function () {
+        }).then(() => {
             // catch JSON after
             Promise.all(urls.map(url => fetch(url)))
                 .then(response => Promise.all(response.map(res => res.json())))
@@ -64,35 +63,35 @@ angular.module("trainApp", ["ui.bootstrap"])
                         stt: stt
                     };
 
-                    var onsuccess = function (id) {
-                        console.log("updated: " + id);
+                    var onsuccess = (id) => {
+                        console.log("successful update: " + id);
                     };
-                    var onerror = function (error) {
+                    var onerror = (error) => {
                         console.log(error);
                     };
 
                     tables.put(times, onsuccess, onerror);
 
-                }).catch(function (error) {
+                }).then(() => {
+                    // Typeahead (searching station)
+                    $s.stations = sto;
+                }).catch((error) => {
                     // Load an error message
                     $(".help-tool-5").show();
                     console.log(error);
                 });
-        }).then(function () {
-            // Typeahead (searching station)
-            $s.stations = sto;
         });
 
         // RadioModel (arriving 1 & departing 0)
         $s.radioModel = 0;
 
         // Datepicker
-        $s.today = function () {
+        $s.today = () => {
             $s.dt = new Date();
         };
         $s.today();
 
-        $s.clear = function () {
+        $s.clear = () => {
             $s.dt = null;
         };
 
@@ -109,15 +108,15 @@ angular.module("trainApp", ["ui.bootstrap"])
             showWeeks: false
         };
 
-        $s.open1 = function () {
+        $s.open1 = () => {
             $s.popup1.opened = true;
         };
 
-        $s.open2 = function () {
+        $s.open2 = () => {
             $s.popup2.opened = true;
         };
 
-        $s.setDate = function (year, month, day) {
+        $s.setDate = (year, month, day) => {
             $s.dt = new Date(year, month, day);
         };
 
@@ -167,14 +166,14 @@ angular.module("trainApp", ["ui.bootstrap"])
             rStops = [];
 
         $s.trainTimes = {
-            "Departure": "-",
-            "From": "-",
-            "To": "-",
-            "Arrival": "-",
-            "Duration": "-",
-            "Stops": {
-                "numStops": "-",
-                "listStops": "-"
+            Departure: "-",
+            From: "-",
+            To: "-",
+            Arrival: "-",
+            Duration: "-",
+            Stops: {
+                numStops: "-",
+                listStops: "-"
             }
         };
 

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="1999" height="284" viewBox="0 0 1999 284">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #449d44;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 33.333px;
+      }
+
+      .cls-3 {
+        fill: #323232;
+        text-anchor: middle;
+        font-family: "Avenir-Light", "sans-serif";
+      }
+    </style>
+  </defs>
+  <g>
+    <rect x="70" y="143" width="171" height="11" class="cls-1"/>
+    <rect x="241" y="143" width="171" height="11" class="cls-1"/>
+    <circle cx="69.5" cy="148.5" r="19.5" class="cls-1"/>
+    <circle cx="240.5" cy="148.5" r="19.5" class="cls-1"/>
+    <text x="81" y="63" class="cls-2"><tspan x="81" class="cls-3">Suisun- </tspan><tspan dy="1.2em" x="81" class="cls-3">Fairfield </tspan></text>
+    <text x="246" y="214" class="cls-2"><tspan x="246" class="cls-3">Martinez</tspan></text>
+  </g>
+  <g>
+    <rect x="400" y="143" width="171" height="11" class="cls-1"/>
+    <rect x="571" y="143" width="171" height="11" class="cls-1"/>
+    <circle cx="399.5" cy="148.5" r="19.5" class="cls-1"/>
+    <circle cx="570.5" cy="148.5" r="19.5" class="cls-1"/>
+    <text x="400" y="103" class="cls-2"><tspan x="400" class="cls-3">Richmond</tspan></text>
+    <text x="576" y="214" class="cls-2"><tspan x="576" class="cls-3">Berkeley </tspan></text>
+  </g>
+  <g>
+    <rect x="729" y="142" width="171" height="11" class="cls-1"/>
+    <rect x="900" y="142" width="171" height="11" class="cls-1"/>
+    <circle cx="728.5" cy="147.5" r="19.5" class="cls-1"/>
+    <circle cx="899.5" cy="147.5" r="19.5" class="cls-1"/>
+    <text x="729" y="102" class="cls-2"><tspan x="729" class="cls-3">Emeryville</tspan></text>
+    <text x="905" y="213" class="cls-2"><tspan x="905" class="cls-3">Jack London</tspan><tspan dy="1.2em" x="905" class="cls-3">Square</tspan></text>
+  </g>
+  <g>
+    <rect x="1072" y="140" width="171" height="11" class="cls-1"/>
+    <rect x="1243" y="140" width="171" height="11" class="cls-1"/>
+    <circle cx="1071.5" cy="145.5" r="19.5" class="cls-1"/>
+    <circle cx="1242.5" cy="145.5" r="19.5" class="cls-1"/>
+    <text x="1072" y="63" class="cls-2"><tspan x="1072" class="cls-3">Oakland</tspan><tspan dy="1.2em" x="1072" class="cls-3">Coliseum</tspan></text>
+    <text x="1248" y="211" class="cls-2"><tspan x="1248" class="cls-3">Hayward</tspan></text>
+  </g>
+  <g>
+    <rect x="1396" y="139" width="171" height="11" class="cls-1"/>
+    <rect x="1567" y="139" width="171" height="11" class="cls-1"/>
+    <circle cx="1395.5" cy="144.5" r="19.5" class="cls-1"/>
+    <circle cx="1566.5" cy="144.5" r="19.5" class="cls-1"/>
+    <text x="1396" y="99" class="cls-2"><tspan x="1396" class="cls-3">Fremont</tspan></text>
+    <text x="1572" y="210" class="cls-2"><tspan x="1572" class="cls-3">Santa Clara</tspan><tspan dy="1.2em" x="1572" class="cls-3">Great America</tspan></text>
+  </g>
+  <g>
+    <rect x="1739" y="139" width="171" height="11" class="cls-1"/>
+    <circle cx="1738.5" cy="144.5" r="19.5" class="cls-1"/>
+    <circle cx="1909.5" cy="144.5" r="19.5" class="cls-1"/>
+    <text x="1739" y="52" class="cls-2"><tspan x="1739" class="cls-3">Santa Clara</tspan><tspan dy="1.2em" x="1739" class="cls-3">University</tspan></text>
+    <text x="1915" y="210" class="cls-2"><tspan x="1915" class="cls-3">San Jose</tspan></text>
+  </g>
+</svg>

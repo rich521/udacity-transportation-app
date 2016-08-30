@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Trainline scheduler">
     <meta name="author" content="Richard Strutt">
-    <link rel="icon" href="../../favicon.ico">
     <title>Transportation App</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -26,14 +25,17 @@
         <h2>Capital Corridor</h2>
         <p>Intercity Rail Train times</p>
         <div class="help-tool-5 ht">No connection</div>
+        <div class="svg-container">
+            <img class="trainSvg" src="imgs/cc.svg" alt="Train times" />
+        </div>
         <div class="form-group" ng-controller="MainController">
             <!--Typeahead 1-->
             <label for="stations">From</label>
-            <input name="stations" id="station_1" type="text" placeholder="Name of station" ng-model="selected" uib-typeahead="s for s in stations | limitTo:20 | filter:$viewValue" class="form-control">
+            <input name="stations" id="station_1" type="text" placeholder="Name of station" ng-model="selected" uib-typeahead="s for s in stations | limitTo:20 | filter:$viewValue" class="form-control" autocomplete="off">
             <div class="help-tool-1 ht">Input a station</div>
             <!--Typeahead 2-->
             <label for="stations">To</label>
-            <input name="stations" id="station_2" type="text" placeholder="Name of station" ng-model="sb" uib-typeahead="s for s in stations | limitTo:20 | filter:$viewValue" class="form-control">
+            <input name="stations" id="station_2" type="text" placeholder="Name of station" ng-model="sb" uib-typeahead="s for s in stations | limitTo:20 | filter:$viewValue" class="form-control" autocomplete="off">
             <div class="help-tool-2 ht">Input a station</div>
             <div class="help-tool-3 ht">Same station name, change to another</div>
             <!--Modal picker-->
