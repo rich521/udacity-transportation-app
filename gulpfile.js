@@ -21,7 +21,7 @@ gulp.task('serve', ['sass', 'lint'], function () {
 
     browserSync.init({
         browser: "google chrome",
-        server: "./"
+        server: "./dist"
     });
 
     gulp.watch(jsDist, ['lint']);
@@ -33,7 +33,7 @@ gulp.task('serve', ['sass', 'lint'], function () {
 gulp.task('serve:dist', function () {  
      browserSync.init({
         browser: "google chrome",
-        server: "./"
+        server: "./dist"
     });
 });
 
