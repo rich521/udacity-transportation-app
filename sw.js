@@ -6,8 +6,11 @@ self.addEventListener('install', function (event) {
             return cache.addAll([
                     '/',
                     'dist/js/scripts.js',
+                    'dist/js/library.js',
                     'dist/css/main.css',
+                    'dist/css/bootstrap.css',
                     'dist/imgs/cc.svg',
+                    'dist/fonts/glyphicons-halflings-regular.woff2',
                     'https://fonts.googleapis.com/css?family=Open+Sans:300'
                 ])
                 .then(function () {
@@ -21,10 +24,8 @@ self.addEventListener('activate', function (event) {
     self.clients.claim();
     event.waitUntil(
         caches.keys().then(function (cacheNames) {
-            console.log(cacheNames);
             return Promise.all(
                 cacheNames.filter(function (cacheName) {
-                    console.log(cacheName);
                     return cacheName.startsWith('app-') &&
                         cacheNames != staticCacheName;
                 }).map(function (cacheName) {
