@@ -5,12 +5,12 @@ self.addEventListener('install', function (event) {
         caches.open(staticCacheName).then(function (cache) {
             return cache.addAll([
                     '/',
-                    'dist/js/scripts.js',
-                    'dist/js/library.js',
-                    'dist/css/main.css',
-                    'dist/css/bootstrap.css',
-                    'dist/imgs/cc.svg',
-                    'dist/fonts/glyphicons-halflings-regular.woff2',
+                    '/js/scripts.js',
+                    '/js/library.js',
+                    '/css/main.css',
+                    '/css/bootstrap.css',
+                    '/imgs/cc.svg',
+                    '/fonts/glyphicons-halflings-regular.woff2',
                     'https://fonts.googleapis.com/css?family=Open+Sans:300'
                 ])
                 .then(function () {
