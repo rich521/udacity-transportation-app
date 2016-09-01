@@ -17,7 +17,7 @@ var jsSrc = 'src/js/**/*.js',
     sassSrc = 'src/sass/**/*.scss';
 
 // Watch all files when changing live 
-gulp.task('default', ['sass', 'lint'], function () {
+gulp.task('serve', ['sass', 'lint'], function () {
 
     browserSync.init({
         browser: "google chrome",
@@ -28,6 +28,13 @@ gulp.task('default', ['sass', 'lint'], function () {
     gulp.watch(sassSrc, ['sass']);
     gulp.watch(jsSrc, ['js-watch']);
     gulp.watch("*.html").on('change', browserSync.reload);
+});
+
+gulp.task('serve:dist', function () {  
+     browserSync.init({
+        browser: "google chrome",
+        server: "./"
+    });
 });
 
 // Watch for errors in js files
