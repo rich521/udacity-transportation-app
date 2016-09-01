@@ -5,14 +5,14 @@ var angular,
     $;
 
 angular.module("trainApp", ["ui.bootstrap"])
-    .controller("MainController", ($scope) => {
+    .controller("MainController", ["$scope", ($scope) => {
         var $s = $scope,
             sto,
             stt,
             tables;
         var urls = [
             "http://api.511.org/transit/stops?api_key=a9a92f72-6f26-4d58-a1ab-db8ab5833ed2&operator_id=Capitol Corridor&format=Json",
-            "http://api.511.org/transit/timetable?api_key=a9a92f72-6f26-4d58-a1ab-db8ab5833ed2&operator_id=Capitol Corridor&line_id=CAPITOL"
+            "http://api.511.org/transit/timetable?api_key=a9a92f72-6f26-4d58-a1ab-db8ab5833ed2&operator_id=Capitol Corridor&line_id=CAPITOL&format=Json"
         ];
 
         new Promise((resolve) => {
@@ -29,6 +29,8 @@ angular.module("trainApp", ["ui.bootstrap"])
                             sto = data.sto;
                             // Specific timetable
                             stt = data.stt;
+                            $s.stations = sto;
+
                         }
                         resolve();
                     };
@@ -57,6 +59,8 @@ angular.module("trainApp", ["ui.bootstrap"])
 
                     stt = result[1].Content.TimetableFrame;
 
+                    $s.stations = sto;
+
                     var times = {
                         id: 1,
                         sto: sto,
@@ -72,9 +76,6 @@ angular.module("trainApp", ["ui.bootstrap"])
 
                     tables.put(times, onsuccess, onerror);
 
-                }).then(() => {
-                    // Typeahead (searching station)
-                    $s.stations = sto;
                 }).catch((error) => {
                     // Load an error message
                     $(".help-tool-5").show();
@@ -223,7 +224,7 @@ angular.module("trainApp", ["ui.bootstrap"])
             function getStops(a1, a2, a3) {
                 rStops = [];
                 for (var k = a1; k < a2; k++) {
-                    rStops.push(sto[k].slice(0, -9));
+                    rStops.push(sto[k].slice(0, -10));
                 }
                 if (!a3) {
                     rStops.reverse();
@@ -338,6 +339,7 @@ angular.module("trainApp", ["ui.bootstrap"])
                     // On successful result, print out scope
                     if (count[0] && count[1]) {
                         $(".noTrains").hide();
+                        $(".tableTimes").show();
 
                         $s.myValue = true;
                         var tt = moment.utc(moment(setTimeT2, "HH:mm:ss").diff(moment(setTimeT1, "HH:mm:ss"))).format("HH:mm:ss").substring(0, 5),
@@ -364,6 +366,7 @@ angular.module("trainApp", ["ui.bootstrap"])
             }
             if (!goTrains) {
                 $(".noTrains").show();
+                $(".tableTimes").hide();
                 window.scrollTo(0, document.body.scrollHeight);
             }
         }
@@ -380,4 +383,4 @@ angular.module("trainApp", ["ui.bootstrap"])
             }
             return dd;
         }
-    });
+    }]);

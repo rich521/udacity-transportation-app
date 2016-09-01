@@ -4,11 +4,13 @@
   "description": "schedule for train times",
   "main": "gulpfile.js",
   "dependencies": {
+    "babel-preset-es2015": "^6.14.0",
     "browser-sync": "^2.14.0",
     "browserify": "^13.1.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.42",
     "es6-promise": "^3.2.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.0",
     "whatwg-fetch": "^1.0.0"
@@ -16,7 +18,10 @@
   "devDependencies": {
     "eslint": "^3.3.1",
     "eslint-config-google": "^0.6.0",
-    "gulp-autoprefixer": "^3.1.1"
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

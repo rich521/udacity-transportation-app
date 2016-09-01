@@ -83,9 +83,15 @@ body {
         font-size: 12px;
         border-bottom: 1px lightgrey solid;
     }
-
     .tr-2 td {
         width: 100%;
+        span {
+            padding-left: 10px;
+        }
+        .cons {
+            color: $pcolor;
+            font-size: 14px;
+        }
     }
 }
 
@@ -155,6 +161,12 @@ body {
     p {
         margin: 0;
     }
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+    background-color: $pcolor;
 }
 
 @media (max-width:480px) {
